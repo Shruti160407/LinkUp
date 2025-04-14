@@ -9,7 +9,7 @@ import { Button } from './ui/button';
 import { createPost } from '@/src/actions/post.action';
 import toast from 'react-hot-toast';
 
-function CreatePost() {
+function CreatePost() {  
   const { user } = useUser();
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -47,7 +47,7 @@ function CreatePost() {
               <AvatarImage src={user?.imageUrl || "/avatar.png"} />
             </Avatar>
             <Textarea
-              placeholder="What's on your mind?"
+              placeholder="Got something on your mind?"
               className="min-h-[100px] resize-none border-none focus-visible:ring-0 p-0 text-base"
               value={content}
               onChange={(e) => setContent(e.target.value)}

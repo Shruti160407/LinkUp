@@ -121,8 +121,9 @@ async function Sidebar() {
   const authUser = await currentUser(); // This is now a Server Component usage
   if (!authUser) return <UnAuthenticatedSidebar />;
 
-  const user = await getUserByClerkId(authUser.id); // Fetch user details
+  const user = await getUserByClerkId(authUser.id); // Fetch user details (it is technically a server action because it is still a POST request)
   if (!user) return null;
+ 
 
   return (
     <div className="sticky top-20">
